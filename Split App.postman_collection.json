@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "dbd5afeb-6a0b-4972-bc57-f0093abc51e3",
+		"name": "Split App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Expense With Equal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "73616D65746F6B656E666F61616C6C",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "default"
+						},
+						{
+							"key": "amount",
+							"value": "1000",
+							"type": "default"
+						},
+						{
+							"key": "type",
+							"value": "0",
+							"description": "0-EQUAL, 1-EXACT, 2- PERCENTAGE",
+							"type": "default"
+						},
+						{
+							"key": "splitwith",
+							"value": "2,3,4",
+							"type": "default"
+						},
+						{
+							"key": "splitcondition",
+							"value": "",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/addexpense",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addexpense"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Expense With Exact",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "73616D65746F6B656E666F61616C6C",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "default"
+						},
+						{
+							"key": "amount",
+							"value": "1250",
+							"type": "default"
+						},
+						{
+							"key": "type",
+							"value": "1",
+							"description": "0-EQUAL, 1-EXACT, 2- PERCENTAGE",
+							"type": "default"
+						},
+						{
+							"key": "splitwith",
+							"value": "2,3",
+							"type": "default"
+						},
+						{
+							"key": "splitcondition",
+							"value": "370,880",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/addexpense",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addexpense"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Expense With Percentage",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "73616D65746F6B656E666F61616C6C",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user_id",
+							"value": "4",
+							"type": "default"
+						},
+						{
+							"key": "amount",
+							"value": "1200",
+							"type": "default"
+						},
+						{
+							"key": "type",
+							"value": "2",
+							"description": "0-EQUAL, 1-EXACT, 2- PERCENTAGE",
+							"type": "default"
+						},
+						{
+							"key": "splitwith",
+							"value": "1,2,3,4",
+							"type": "default"
+						},
+						{
+							"key": "splitcondition",
+							"value": "40,20,20,20",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/addexpense",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addexpense"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get owns by user id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "73616D65746F6B656E666F61616C6C",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/getownsbyid/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getownsbyid",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get owns To user id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "73616D65746F6B656E666F61616C6C",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/getownstoid/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getownstoid",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
